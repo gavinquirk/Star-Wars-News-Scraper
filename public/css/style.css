@@ -1,0 +1,18 @@
+
+
+.content-box {
+    background-color:darkslategray;
+    color: white;
+    margin: 2%;
+}
+
+.content-title {
+    background-color: lightslategray;
+    color: white;
+    padding: 2%;
+}
+
+.content-link {
+    margin: 10%;
+
+}
