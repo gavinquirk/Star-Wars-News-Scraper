@@ -19,7 +19,7 @@ app.use(express.static("public"));
 // mongoose.connect("mongodb://localhost/star-wars-scraper");
 
 // MLAB CONNECTION
-let uri = 'mongodb://vader:father1@ds143511.mlab.com:43511/starwarsnewsscraper';
+let uri = 'mongodb://admin:admin1@ds243441.mlab.com:43441/heroku_63m73wmw';
 mongoose.connect(uri);
 // let db = mongoose.connection;
 
