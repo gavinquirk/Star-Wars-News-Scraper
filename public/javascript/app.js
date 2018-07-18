@@ -1,26 +1,53 @@
-// Request and append Articles to page
-$.getJSON("/articles", function (data) {
-  for (var i = 0; i < data.length; i++) {
-    var newRow = '<div class="row content-box" data-id="' + data[i]._id + '"></div>'
-    var newCol = '<div class="col-md-9"></div>'
-    var articleId = data[i]._id
-    var articleTitle = data[i].title
-    var articleLink = data[i].link
+$( document ).ready(function() {
 
-    $("#articles").append(`
-      <div class="row content-box" data-id="${articleId}">
-        <div class="row">
-          <div class="col-md-12">
-            <p class='content-title' data-id='${articleId}'>${articleTitle}</p>
-          </div>
-          <div class="col-md-12">
-            <a class='content-link' href='${articleLink}'>Link To Article</a>
+deleteArticles()
+
+function deleteArticles () {
+  console.log("Deleting old articles")
+  $.ajax({
+    method: "DELETE",
+    url: "/remove"
+  }).then(function (data) {
+    scrapeArticles()
+  })
+}
+
+function scrapeArticles () {
+  console.log("Scraping new articles")
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  }).then(function (data) {
+    getArticles()
+  })
+}
+
+function getArticles () {
+  console.log("Retrieving and appending articles")
+  $.getJSON("/articles", function (data) {
+    for (var i = 0; i < data.length; i++) {
+      var newRow = '<div class="row content-box" data-id="' + data[i]._id + '"></div>'
+      var newCol = '<div class="col-md-9"></div>'
+      var articleId = data[i]._id
+      var articleTitle = data[i].title
+      var articleLink = data[i].link
+  
+      $("#articles").append(`
+        <div class="row content-box" data-id="${articleId}">
+          <div class="row">
+            <div class="col-md-12">
+              <p class='content-title' data-id='${articleId}'>${articleTitle}</p>
+            </div>
+            <div class="col-md-12">
+              <a class='content-link' href='${articleLink}'>Link To Article</a>
+            </div>
           </div>
         </div>
-      </div>
-    `)
-  }
-});
+      `)
+    }
+  });
+}
+
 
 // Click event for adding note
 $(document).on("click", "p", function () {
@@ -63,3 +90,6 @@ $(document).on("click", "#savenote", function () {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+});
+

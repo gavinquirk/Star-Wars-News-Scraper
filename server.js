@@ -44,6 +44,18 @@ app.get("/scrape", function(req, res) {
   });
 });
 
+// Route for removing all documents from colelction
+app.delete("/remove", function(req, res) {
+  console.log("Server Told To Remove")
+  db.Article.deleteMany({})
+    .then(function() {
+      res("articles deleted")
+    })
+    .catch(function(err) {
+      res.json(err)
+    })
+})
+
 // Route for finding all Articles
 app.get("/articles", function(req, res) {
   db.Article.find({})
