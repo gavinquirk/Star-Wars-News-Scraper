@@ -3,6 +3,28 @@ body {
     min-height: 1000px;
 }
 
+.header {
+    height: 10%;
+    background-color: white;
+}
+.header p {
+    text-align: center;
+}
+
+#header-logo {
+    height: 7%;
+    width: 7%;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#header-title {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 .main {
     /* background:  */
      background-image: url("../images/vader-stormtrooper-bg.jpg");
@@ -12,18 +34,22 @@ body {
 }
 
 .content-box {
-    background-color:darkslategray;
+    background-color: rgb(70, 70, 70);
     color: white;
-    margin: 2%;
+    margin: 2% 15%;
 }
 
 .content-title {
-    background-color: lightslategray;
-    color: white;
+    background-color: lightgray;
+    color: black;
     padding: 2%;
 }
 
 .content-link {
     margin: 10%;
 
+}
+
+#bodyinput {
+    width: 100%;
 }

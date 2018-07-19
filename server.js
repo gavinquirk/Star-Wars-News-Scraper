@@ -99,4 +99,5 @@ app.post("/articles/:id", function(req, res) {
 // Express Server
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
+  console.log("http://localhost:3000/")
 });

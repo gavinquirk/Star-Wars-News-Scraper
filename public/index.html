@@ -9,20 +9,44 @@
 </head>
 
 <body>
-    <div class='jumbotron'>
-      <h2>Star Wars News Scraper</h2>
-      <button class="testButton">TEST</button>
-    </div>
-    <div class="main">
+  <!-- Header -->
+  <div class='header'>
+    <img id="header-logo" src="images/imperial-logo.png">
+    <h2 id="header-title">Star Wars News Scraper</h2>
+  </div>
 
-    <div class='container'>
-      <div class='row'>
-        <div class='col-md-9' id="articles"></div>
-        <div class='col-md-3' id="notes"></div>
+  <!-- Main -->
+  <div class="main">
+  
+  <!-- Modal -->
+  <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="noteModalLabel"></h5>
+        </div>
+        <div class="modal-body">
+          <h6>Add a Note</h6>
+            <textarea id='bodyinput' name='body'></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="saveButton">Save</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Article Container -->
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-12' id="articles"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
   <script src="./javascript/app.js"></script>
 </body>
 
