@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // MONGO DB CONNECTION
-// mongoose.connect("mongodb://localhost/star-wars-scraper");
+mongoose.connect("mongodb://localhost/star-wars-scraper");
 
 // MLAB CONNECTION
-let uri = 'mongodb://vader:father1@ds143511.mlab.com:43511/starwarsnewsscraper';
-mongoose.connect(uri);
+// let uri = 'mongodb://user:pass@ds143511.mlab.com:43511/starwarsnewsscraper';
+// mongoose.connect(uri);
 
 // ROUTES
 // Scraping route
